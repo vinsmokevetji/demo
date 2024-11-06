@@ -1,0 +1,31 @@
+.image-item {
+  width: 100px;
+  height: 150px;
+  padding: 15px;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 500px;
+  flex-wrap: wrap;
+  border: 1px solid green;
+  padding: 5px;
+}
+.description {
+  border-radius: 8px;
+  width: 80px;
+  background-color: #ccc;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: blue;
+  text-decoration: none;
+  text-align: center;
+}
