@@ -8,17 +8,119 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="navbar">
-      <span class="name">Trần Khánh My - 45923832</span>
+    <div class="example">
+      <div class="title">Bài 3.4: <span>ĐỊNH DẠNG BIỂU MẪU BẰNG CSS</span></div>
+      <div class="container">
+        <div class="table-name">CHI PHÍ DU LỊCH</div>
+        <div class="table-menu">
+          <div class="table-menu-selector">
+            <div class="menu-list">
+              <div class="menu-list-title">Địa điểm</div>
+              <div class="menu-list-item">
+                <div class="menu-item">
+                  <label>
+                    <input type="radio" name="menu-item-select" id="" /><span
+                      >Vũng Tàu</span
+                    >
+                  </label>
+                </div>
+                <div class="menu-item">
+                  <label>
+                    <input type="radio" name="menu-item-select" id="" /><span
+                      >Đà Lạt</span
+                    >
+                  </label>
+                </div>
+                <div class="menu-item">
+                  <label>
+                    <input type="radio" name="menu-item-select" id="" /><span
+                      >Nha Trang</span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="menu-list">
+              <div class="menu-list-title">Dịch vụ</div>
+              <div class="menu-list-item">
+                <div class="menu-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="input-service"
+                      name="menu-item-select"
+                      id=""
+                    /><span>Khách Sạn</span>
+                  </label>
+                </div>
+                <div class="menu-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="input-service"
+                      name="menu-item-select"
+                      id=""
+                    /><span>Ăn uống</span>
+                  </label>
+                </div>
+                <div class="menu-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="input-service"
+                      name="menu-item-select"
+                      id=""
+                    /><span>Đi lại</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-calculator">
+            <input class="inputNumber cost" placeholder="Nhập số" type="text" />
+            <input class="inputNumber cost" placeholder="Nhập số" type="text" />
+          </div>
+          <div class="total-cost">
+            <span>Tổng chi phí:</span>
+            <input type="text" id="total-cost" disabled class="inputNumber" />
+          </div>
+          <div class="action-table">
+            <button onclick="calcCost()">Tính</button>
+            <button onclick="resetNumber()">Làm lại</button>
+            <button>Thoát</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container">
-      <span class="title-menu">Món ngon</span>
-      <ul>
-        <li>thịt cuốn mắm Thái</li>
-        <li>Bánh xèo miền Tây</li>
-        <li>Bánh tằm bì</li>
-        <li>Bánh ống lá dứa</li>
-      </ul>
-    </div>
+    <script>
+      document.querySelectorAll(".inputNumber").forEach((input) => {
+        input.addEventListener("keypress", (event) => validInput(event));
+        input.addEventListener("paste", (event) => checkPaste(event));
+      });
+      function checkPaste(event) {
+        const clipboard = (event.clipboardData || window.clipboardData).getData(
+          "text"
+        );
+        if (!/^\d+$/.test(clipboard)) {
+          event.preventDefault();
+        }
+      }
+      function validInput(event) {
+        if (/[^0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }
+      function calcCost() {
+        let cost = 0;
+        document
+          .querySelectorAll(".cost")
+          .forEach((e) => (cost += parseInt(e.value || 0)));
+        document.getElementById("total-cost").value = cost;
+      }
+      function resetNumber() {
+        document.querySelectorAll(".cost").forEach((e) => (e.value = null));
+        document.getElementById("total-cost").value = null;
+      }
+    </script>
   </body>
 </html>

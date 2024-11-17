@@ -1,40 +1,89 @@
+.example {
+  /* background-color: #ffedc9; */
+}
+.title {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 12px;
+}
+.title span {
+  font-size: 16px;
+  font-weight: 700;
+  color: blue;
+}
 .container {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   width: 100%;
-}
-.title-menu {
-  background-color: yellow;
-  padding: 5px 15px;
-  margin-bottom: 15px;
-}
-ul {
   flex-direction: column;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  background-color: purple;
-  width: 80%;
-  padding: 35px 35px;
-  border-radius: 15px;
 }
-li {
-  list-style-type: decimal;
-  background-color: pink;
-  padding-left: 5px;
+.table-name {
+  color: #af66e4;
+  font-weight: 700;
+}
+.table-menu {
+  border: 2px solid green;
+  background-color: #ffedc9;
+  width: 400px;
 }
 
-.navbar {
+.table-menu-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.menu-calculator {
+  width: 100%;
+  display: flex;
+}
+.menu-calculator input {
+  width: 50%;
+}
+input {
+  border-radius: 5px;
+  border: 1px solid #af66e4;
+  background-color: #fef5ee;
+  padding: 5px 10px;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  color: blue;
+}
+.menu-list-title {
+  background-color: #ffedc9;
+  padding: 10px 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.menu-list-item {
+  background-color: #fef5ee;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 10px;
+}
+.menu-item label {
+  display: flex;
+  gap: 5px;
+}
+.total-cost {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 15px;
-  background-image: url(https://images.unsplash.com/photo-1721332149274-586f2604884d?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  padding: 10px 0;
 }
-.avatar {
-  width: 50px;
-  height: 50px;
+.total-cost input {
+  width: 65%;
+}
+.action-table {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding: 5px;
+}
+.action-table button {
+  background-color: #afecef;
+  padding: 5px 10px;
 }
